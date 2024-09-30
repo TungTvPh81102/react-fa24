@@ -1,0 +1,23 @@
+function generateSequence(n) {
+  const sequence = [];
+  while (n !== 1) {
+    sequence.push(n);
+    if (n % 2 === 0) {
+      // Nếu n là số chẵn
+      n = n / 2;
+    } else {
+      // Nếu n là số lẻ
+      n = n * 3 + 1;
+    }
+  }
+  sequence.push(1); // Thêm số 1 vào cuối dãy
+  return sequence;
+}
+
+// Nhập số lượng test cases
+const t = parseInt(prompt("Nhập số lượng test cases: "));
+for (let i = 0; i < t; i++) {
+  const n = parseInt(prompt("Nhập giá trị N: "));
+  const sequence = generateSequence(n);
+  console.log(`Dãy số tương ứng là: ${sequence.join(" ")}`);
+}
