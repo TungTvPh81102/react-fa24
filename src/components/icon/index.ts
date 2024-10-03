@@ -9,6 +9,11 @@ import IconTrash from "./IconTrash";
 import IconMap from "./IconMap";
 import IconContact from "./IconContact";
 import IconShare from "./IconShare";
+import IconNotification from "./IconNotification";
+import IconPlus from "./IconPlus";
+import IconEye from "./IconEye";
+import IconCircle from "./IconCircle";
+import IconEdit from "./IconEdit";
 export {
   IconUser,
   IconCart,
@@ -21,4 +26,9 @@ export {
   IconMap,
   IconContact,
   IconShare,
+  IconNotification,
+  IconPlus,
+  IconEye,
+  IconCircle,
+  IconEdit,
 };

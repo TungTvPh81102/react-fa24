@@ -12,8 +12,39 @@ import CartPage from "./pages/(website)/cart/page";
 import CheckOutPage from "./pages/(website)/checkout/page";
 import AboutPage from "./pages/(website)/about/page";
 import ContactPage from "./pages/(website)/contact/page";
+import CoursePage from "./pages/(admin)/course/page";
+import CourseEditPage from "./pages/(admin)/course/edit/page";
+import CourseCreatePage from "./pages/(admin)/course/create/page";
+import { useEffect, useState } from "react";
+import { Spin } from "antd";
+import CourseUpdateContentPage from "./pages/(admin)/course/update-content/page";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setLoading(false);
+    };
+
+    loadData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <Spin size="large" />
+      </div>
+    );
+  }
   return (
     <>
       <Routes>
@@ -33,6 +64,13 @@ function App() {
         <Route path="/admin" element={<LayoutAdmin />}>
           <Route index element={<Navigate to="dashboard" />}></Route>
           <Route path="dashboard" element={<DashboardPage />}></Route>
+          <Route path="course" element={<CoursePage />}></Route>
+          <Route path="course/create" element={<CourseCreatePage />}></Route>
+          <Route path="course/:id/edit" element={<CourseEditPage />}></Route>
+          <Route
+            path="course/update-content"
+            element={<CourseUpdateContentPage />}
+          ></Route>
         </Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
