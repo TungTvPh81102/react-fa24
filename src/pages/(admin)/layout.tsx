@@ -18,6 +18,7 @@ import {
 import Search from "antd/es/input/Search";
 import { IconNotification } from "../../components/icon";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 const { Content, Footer, Sider } = Layout;
 
@@ -131,7 +132,14 @@ const LayoutAdmin: React.FC = () => {
               <Button>
                 <IconNotification />
               </Button>
-              <Avatar src="https://lh3.googleusercontent.com/a/ACg8ocLFxXB90EvTAWjG2qpKfmCks0853ZsPnjE_7hTyx_fgGvGgCTY=s360-c-no" />
+              <header>
+                <SignedOut>
+                  <Link to="/sign-in">Sign In</Link>
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+              </header>
             </Space>
           </div>
         </div>

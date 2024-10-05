@@ -18,6 +18,8 @@ import CourseCreatePage from "./pages/(admin)/course/create/page";
 import { useEffect, useState } from "react";
 import { Spin } from "antd";
 import CourseUpdateContentPage from "./pages/(admin)/course/update-content/page";
+import SignInPage from "./pages/(website)/signIn/page";
+import SignUpPage from "./pages/(website)/signUp/page";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -72,6 +74,8 @@ function App() {
             element={<CourseUpdateContentPage />}
           ></Route>
         </Route>
+        <Route path="/sign-up/*" element={<SignUpPage />}></Route>
+        <Route path="/sign-in" element={<SignInPage />}></Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>
     </>

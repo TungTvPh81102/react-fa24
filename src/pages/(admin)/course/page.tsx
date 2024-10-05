@@ -75,6 +75,7 @@ const CoursePage = () => {
   });
 
   const showModal = (course: DataType) => {
+    console.log(course);
     setSelectedCourse(course);
     setIsModalOpen(true);
   };

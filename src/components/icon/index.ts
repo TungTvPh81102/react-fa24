@@ -14,6 +14,8 @@ import IconPlus from "./IconPlus";
 import IconEye from "./IconEye";
 import IconCircle from "./IconCircle";
 import IconEdit from "./IconEdit";
+import IconCheck from "./IconCheck";
+import IconBook from "./IconBook";
 export {
   IconUser,
   IconCart,
@@ -31,4 +33,6 @@ export {
   IconEye,
   IconCircle,
   IconEdit,
+  IconCheck,
+  IconBook,
 };
